@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dida-roof-segmentation"
+version = "0.1.0"
+description = "Data preparation and paired augmentation for satellite roof segmentation"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24,<3", "Pillow>=10,<13"]
+
+[project.optional-dependencies]
+training = ["torch==2.8.0", "torchvision==0.23.0"]
+notebook = ["jupyterlab>=4,<5", "ipykernel>=6,<8"]
+
+[tool.setuptools.packages.find]
+include = ["roof_utils*"]
